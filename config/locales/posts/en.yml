@@ -1,0 +1,6 @@
+es:
+  posts:
+    new:
+      title: New Post
+    index:
+      title: Our Posts

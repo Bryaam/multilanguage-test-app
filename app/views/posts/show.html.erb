@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+<div>
+  Caption: <%= @post.caption %></br>
+  Likes: <%= @post.likes %></br>
+  <%= image_tag @post.display_src %>
+</div>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
