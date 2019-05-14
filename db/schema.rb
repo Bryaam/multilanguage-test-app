@@ -10,28 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_17_181034) do
+ActiveRecord::Schema.define(version: 2019_04_14_043703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "post_translations", force: :cascade do |t|
-    t.integer "post_id", null: false
-    t.string "locale", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "caption"
-    t.index ["locale"], name: "index_post_translations_on_locale"
-    t.index ["post_id"], name: "index_post_translations_on_post_id"
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string "code", null: false
-    t.text "caption"
+    t.text "caption", null: false
+    t.jsonb "helper_options"
     t.integer "likes", default: 0, null: false
     t.string "display_src", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.jsonb "translations", default: {}
   end
 
 end

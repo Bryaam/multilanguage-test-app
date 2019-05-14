@@ -1,5 +1,10 @@
 class Post < ApplicationRecord
-  translates :caption, fallbacks_for_empty_translations: true
+  extend Mobility
+  translates :caption
+  translates :helper_options
+
+  # translates :caption, type: :text
+  # translates :helper_options, backend: :jsonb
 
   validates_presence_of :caption
 
